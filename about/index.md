@@ -19,7 +19,7 @@ The next step in my research is to look at airborne radar observations and see w
 
 ###Scientific meetings
 
-I've presented partial results in the following AMS meetings:
+I've presented partial results in the following American Meteorological Society meetings:
 
 
 * [16th Conference on Mountain Meteorology](https://ams.confex.com/ams/16MountMet/webprogram/Paper251866.html)
