@@ -7,7 +7,6 @@ comments: true
 image:
   feature: sample-image-2.jpg
   credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
 
 I'm Raul Valenzuela, from Chile. I studied Natural Resources Engineer at University of Chile and then
