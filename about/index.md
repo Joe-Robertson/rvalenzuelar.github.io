@@ -34,7 +34,7 @@ Thus, nowadays I'm using advanced tools such as scanning radars that allow me to
 
 So, thesedays my research interests can be grouped as: 
 
-* Orographic precipitation forcing
+* Orographic precipitation
 * Mountain meteorology 
 * Radar meteorology (ground-based and airborne)
 
