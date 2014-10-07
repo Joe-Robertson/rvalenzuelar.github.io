@@ -1,6 +1,6 @@
 ---
 layout: page
-title: A short Bio
+title: A short (career) Bio
 tags: [about, author, bio]
 modified: 2014-08-08T20:53:07.573882-04:00
 comments: true
@@ -23,4 +23,4 @@ The next step in the research is to look at airborne radar data and see what can
 * Mountain meteorology 
 * Radar meteorology (ground-based and airborne)
 
-I'll be posting about topics in meteorology, especially precipitation, progress in my research, some Matlab tips that I've learned during my PhD, and cloud pictures that I've shooted my self.
+
