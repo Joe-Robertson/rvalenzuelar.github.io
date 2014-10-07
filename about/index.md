@@ -13,6 +13,8 @@ image:
 I'm Raul Valenzuela, from Chile. I studied Natural Resources Engineer at University of Chile and then
 moved to Boulder, Colorado to start a PhD in Atmospheric and Oceanic Science at University of Colorado Boulder.
 
+---
+
 My research interests include:
 
 * Orographic precipitation forcing
