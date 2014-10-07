@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Interactive online plots with plotly"
-excerpt: "Example of a auto-updating plot"
+excerpt: "Example of an auto-updating interactive plot"
 tags: [plotly]
 share: true
 ---
