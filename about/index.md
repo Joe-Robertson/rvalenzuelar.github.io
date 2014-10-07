@@ -20,9 +20,3 @@ My research interests include:
 * Radar meteorology (ground-based and airborne)
 
 I'll be posting about progress in my research and also some Matlab tips that I've learned during my PhD
-
-
-<!-- * [Custom 404 page](http://mmistakes.github.io/minimal-mistakes/404.html) to get you started.
-
-
-<a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install Minimal Mistakes Theme</a> -->
