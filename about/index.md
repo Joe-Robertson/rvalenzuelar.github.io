@@ -22,9 +22,7 @@ My research interests include:
 
 
 
-# --> commented lines
-
-# * [Custom 404 page](http://mmistakes.github.io/minimal-mistakes/404.html) to get you started.
+<!-- * [Custom 404 page](http://mmistakes.github.io/minimal-mistakes/404.html) to get you started.
 
 
-# <a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install Minimal Mistakes Theme</a>
+<a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install Minimal Mistakes Theme</a> -->
