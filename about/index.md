@@ -28,7 +28,7 @@ I've presented partial results in the following AMS meetings:
 
 ###Research interests 
 
-I can say that the motivation for my research started with my undergrad thesis. In this work I applied a zonification method to allocate Olive crops in certain basin in Chile. One of the criteria for allocation was the differences in climatoligcal characteristics within the basin; for exmaple, the microclimates. I realized that there were statistically significant climatic differences along the basin; however, I did not have enough knowledge about physics to explain or even understand the origin of those spacial differences.
+I can say that the motivation for my research started with my undergrad thesis. In this work I applied a zonification method to allocate Olive crops in certain basin in Chile. One of the criteria for allocation was the differences in climatoligcal characteristics within the basin; for exmaple, the microclimates. I realized that there were statistically significant climatic differences along the basin; however, I did not have enough knowledge about physics to explain or even understand the origin of those spatial differences.
 
 Thus, nowadays I'm using advanced tools such as scanning radars that allow me to observe and understand a bit more about how mountains can induce spatial differences in the atmosphere. For instance, how mountains can induce changes in the wind field through low-level blocking or gap flows. In addition, now I have a better knowledge about how this changes in the wind field can affect the spatial distribution of precipitation.
 
