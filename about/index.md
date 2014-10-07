@@ -11,7 +11,11 @@ image:
 ---
 
 I'm Raul Valenzuela, from Chile. I studied Natural Resources Engineer at University of Chile and then
-moved to Boulder, Colorado to start a PhD in Atmospheric and Oceanic Science at University of Colorado Boulder. 
+moved to Boulder, Colorado to start a PhD in Atmospheric and Oceanic Science at University of Colorado Boulder.
+
+I'm working at NOAA with David Kingsmill. We are looking at ground based radar data to analyze the structure of the airflow associated the coastal mountains of northern California and understand how influence the precipitation along the coast and over the coastal mountains.
+
+The next step in the research is to look at airborne radar data and see what can we learn from this top-down perspective.
 
 ###My research interests include:
 
@@ -19,4 +23,4 @@ moved to Boulder, Colorado to start a PhD in Atmospheric and Oceanic Science at 
 * Mountain meteorology 
 * Radar meteorology (ground-based and airborne)
 
-I'll be posting about progress in my research and also some Matlab tips that I've learned during my PhD
+I'll be posting about topics in meteorology, especially precipitation, progress in my research, some Matlab tips that I've learned during my PhD, and cloud pictures that I've shooted my self.
