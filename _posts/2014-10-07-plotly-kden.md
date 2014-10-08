@@ -6,7 +6,7 @@ tags: [plotly]
 share: true
 ---
 
-Thesedays there a number of online tools oriented to make plots and share them with social medias. I found Plotly not long ago and here is an example. I made this plot using the Python API along with [web scraping](http://en.wikipedia.org/wiki/Web_scraping) using [beautifulSoup](http://www.crummy.com/software/BeautifulSoup/)
+Thesedays there a number of online tools oriented to make plots and share them with social medias. I found [Plotly](https://plot.ly/feed/#sob) not long ago and here is an example. I made this plot using the Python API along with [web scraping](http://en.wikipedia.org/wiki/Web_scraping) using [beautifulSoup](http://www.crummy.com/software/BeautifulSoup/).
 
 <div class="image-wrap">
 
