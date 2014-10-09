@@ -5,4 +5,4 @@ Please, if you want to use any original content from any of these folders send m
 * _posts/
 * images/
 
-raul.valenzuela@colorado.edu
+raul.valenzuela@colorado.edu 
