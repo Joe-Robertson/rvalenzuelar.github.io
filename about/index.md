@@ -9,7 +9,7 @@ image:
   credit: WeGraphics
 ---
 
-I'm Raul Valenzuela, from Chile. I studied Natural Resources Engineer at University of Chile and then
+Hi, I'm Raul. I studied Natural Resources Engineering at University of Chile and then
 moved to Boulder, Colorado to start a PhD in Atmospheric and Oceanic Science at University of Colorado Boulder.
 
 I started to work at NOAA/PSD with David Kingsmill in 2012 as a research assistant. We are looking at ground based radar observations to analyze the airflow and precipitation structure associated with the coastal mountains of northern California. We try to understand the association between the airflow forced by the mountains and the precipitation enhancement offshore near the coast, along the coast, and over the coastal mountains.
