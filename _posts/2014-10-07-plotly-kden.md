@@ -14,4 +14,10 @@ Thesedays there a number of online tools oriented to make plots and share them w
 
 </div>
 
+<div class="image-wrap">
+
+<iframe width="650" height="550" frameborder="0" seamless="seamless" scrolling="no" src="https://plot.ly/~rvalenzuela/16/650/550"></iframe>
+
+</div>
+
 I'll explain in a future tutorial how I made it using Python.
