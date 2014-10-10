@@ -20,4 +20,4 @@ Thesedays there a number of online tools oriented to make plots and share them w
 
 </div>
 
-I'll explain in a future tutorial how I made it using Python.
+I'll explain in a future tutorial how I made them using Python.
