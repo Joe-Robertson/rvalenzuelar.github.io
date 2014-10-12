@@ -1,1 +1,9 @@
+# Inkscape file
 *.svg
+
+# folders created when using jekyll
+.sass-cache/*
+
+_site/*
+
+
