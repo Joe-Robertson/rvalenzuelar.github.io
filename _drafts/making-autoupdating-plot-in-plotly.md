@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Making an auto-updating plot with plotly"
+title: "Making an auto-updating plot with python and plotly"
 excerpt: "Tutorial"
 tags: [plotly, beautiful soup, web scraping, python]
 share: true
@@ -29,7 +29,7 @@ As Susane explain, you can us BS to download a table, save it as a variable, and
 
 #Fourth step
 
-Get the hand dirties. We will create a python script called plot_plotly.py. In the following, the codes will appear in the same order than in the python script. 
+Get your hands dirty. We will create a python script called plot_plotly.py. In the following, the codes will appear in the same order than in the python script. 
 
 There are a number of libraries we need to import:
 
@@ -45,24 +45,43 @@ import sys 			# command-line argument handling
 {% endhighlight %}
 
 
-The script can accept arguments from the command-line using sys. Thus, we could make a plot for KDEN or any other station, for instance, KORD:
+The script can accept arguments from the command-line using sys. Thus, we can use the name of the station (KDNE) as input argument or choose a different station if needed (e.g. KORD):
 
 {% highlight python %}
 station=sys.argv[1]
-if station!='KDEN' and station != 'KORD':
-	print 'WRONG STATION NAME (KDEN or KORD)!!'
+if station!='KDEN':
+	print 'WRONG STATION NAME!!'
 	exit()
-else:	
-	# determine the url number for plotting
-	if station=='KORD':
-		plotnum='18'
-		timeZone='CDT'
-		location='Chicago/OHare (KORD)'
-	else:
-		plotnum='16'
-		timeZone='MDT'
-		location='Denver International Airport (KDEN)'		
 {% endhighlight %}
+
+Then, we use the station variable for parsing and retrieve the url that hosts the table:
+
+{% highlight python %}
+urlStr="http://w1.weather.gov/obhistory/"+station+".html"
+f=urllib.urlopen(urlStr)
+{% endhighlight %}
+
+...and save this to a local variable to be processes by BS:
+
+{% highlight python %}
+s=f.read()
+{% endhighlight %}
+
+Then, it is the turn of BS to work:
+
+{% highlight python %}
+# parse html 
+soup=BeautifulSoup(s)
+
+# extract table
+table=soup.find("table",cellspacing="3")
+
+# from table extract rows
+dataRows=table.find_all("tr")
+{% endhighlight %}
+
+
+
 
 
 
