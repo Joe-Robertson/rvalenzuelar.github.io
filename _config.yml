@@ -39,10 +39,11 @@ owner:
   google:
     plus: #username
     analytics: 
-    verify: 
+    verify: <meta name="google-site-verification" content="zy4EluBimjfYbjRFQs99hAMBt8x6-gNqEzWoonoek9I" /> 
     ad-client: 
     ad-slot: 
-  bing-verify: 
+  bing:
+    verify: <meta name="msvalidate.01" content="DB4C845FB51288CD99FD56A069A897D3" /> 
   github: #username
   stackoverflow: #http://stackoverflow.com/users/123456/username
   linkedin: #username
