@@ -10,7 +10,10 @@ I was one of those kids attracted to books containing more draws and figures tha
 
 In my research about precipitation over mountain regions I found this figure very neat:
 
-[insert nice figure oro precip]
+<figure>
+	<img src="/images/professional_schematic.jpg">
+</figure>
+
 
 I tried to track back the author and see if he/she could give me some advice in how to reach a similar result. Not the same result because I know this is also art and I’m not an artist. Unfourtunately, I couldn’t find the author; however, I figured out a solution to make my scheme somewhat closer to what I was looking for.
 
