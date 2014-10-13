@@ -3,10 +3,9 @@ layout: page
 title: A short (career) Bio
 tags: [about, author, bio]
 modified: 2014-08-08T20:53:07.573882-04:00
-comments: true
+comments: false
 image:
   feature: header_image-2.jpg
-  credit: WeGraphics
 ---
 
 Hi, I'm Raul. I studied Natural Resources Engineering at University of Chile and then
