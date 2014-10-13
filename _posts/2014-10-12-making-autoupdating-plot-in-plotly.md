@@ -280,7 +280,7 @@ So, if everything is good, you should obtain a plot like this:
 
 #Last step
 
-Although the python script is ready to run, we need a way to run it automaticaly every hour. I learned that there is a Unix utility called [Crontab](http://www.adminschoice.com/crontab-quick-reference) which I found I had in my system by using:
+Although the python script is ready to run, we need a way to run it automatically every hour. I learned that there is a Unix utility called [Crontab](http://www.adminschoice.com/crontab-quick-reference) which I found I had in my system by using:
 
 {% highlight bash %}
 $ man crontab
@@ -297,6 +297,12 @@ This will open a text file using the [Vi](http://en.wikipedia.org/wiki/Vi) text 
 {% highlight text %}
 */62 * * * * /Users/raulvalenzuela/Documents/python/plot_plotly.py KDEN
 {% endhighlight %}
+
+Two important things you need before the schedule can run:
+
+* add this in the first line of your script: #! /usr/bin/env python
+* make the python script executable by using: chmod u+x
+
 
 #Final thoughts
 
