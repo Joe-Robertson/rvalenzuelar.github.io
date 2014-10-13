@@ -39,7 +39,7 @@ owner:
   facebook: #username
   google:
     plus: #username
-    analytics: 
+    analytics: "UA-55666140-1"
     verify: "zy4EluBimjfYbjRFQs99hAMBt8x6-gNqEzWoonoek9I"
     ad-client: 
     ad-slot: 
