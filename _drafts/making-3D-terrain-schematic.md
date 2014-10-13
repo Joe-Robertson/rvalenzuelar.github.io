@@ -17,7 +17,7 @@ In my research about mountain precipitation, I found this figure:
 </figure>
 
 
-
+blababl[Ronald Schott](http://bc.outcrop.org/Schott/)
 
 
 I tried to track back the author and see if he/she could give me some advice in how to reach a similar result. Not the same result because I know this is also art and I’m not an artist. Unfourtunately, I couldn’t find the author; however, I figured out a solution to make my scheme somewhat closer to what I was looking for.
