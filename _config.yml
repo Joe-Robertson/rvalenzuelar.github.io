@@ -3,8 +3,8 @@
 title:            MNTMET
 locale:           en_US
 #url:              http://rvalenzuelar.github.io
-url:              http://localhost:4000
-#url:              http://mntmetblog.com
+#url:              http://localhost:4000
+url:              http://mntmetblog.com
 
 # Jekyll configuration
 
@@ -33,7 +33,8 @@ owner:
     in Atmospheric and Oceanic Sciences at University of Colorado Boulder, 
     in the United States.
   email: raul.valenzuela@colorado.edu
-  disqus-shortname: 'mntmet'
+  disqus:
+    shortname: mntmet
   twitter: mntmet 
   facebook: #username
   google:
