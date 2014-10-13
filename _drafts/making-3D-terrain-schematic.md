@@ -4,15 +4,20 @@ title: "Making a 3D terrain schematic"
 excerpt: "Tutorial"
 tags: [google, sketchup, google sketchup, scheme, airflow, mountain]
 share: true
+comments: true
 ---
 
-I was one of those kids attracted to books containing more draws and figures than words. Not surprisingly, the scientific world is full of papers with figures so I keep attracted to a neat figure in any paper.
+I was one of those kids attracted to books containing more draws and figures than words. Not surprisingly, the scientific world is full of papers with figures so I keep attracted to a neat figures in any paper.
 
-In my research about precipitation over mountain regions I found this figure very neat:
+In my research about mountain precipitation, I found this figure:
 
 <figure>
-	<img src="/images/professional_schematic.jpg">
+	<a href="/images/professional_schematic.jpg"><img src="/images/professional_schematic.jpg"></a>
+	<figcaption>Example of a professional artistic schematic</figcaption>
 </figure>
+
+
+
 
 
 I tried to track back the author and see if he/she could give me some advice in how to reach a similar result. Not the same result because I know this is also art and I’m not an artist. Unfourtunately, I couldn’t find the author; however, I figured out a solution to make my scheme somewhat closer to what I was looking for.
