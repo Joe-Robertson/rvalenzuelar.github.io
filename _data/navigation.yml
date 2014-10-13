@@ -3,8 +3,14 @@
 - title: About
   url: /about/
 
-- title: My Posts
+- title: Articles
   url: /posts/
+
+# - title: Cloud Gallery
+#   url: /cloudgallery/
+
+# - title: Timelapse
+#   url: /timelapse/
 
 # - title: Theme Setup
 #   url: /theme-setup/
