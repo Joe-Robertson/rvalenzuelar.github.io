@@ -1,5 +1,7 @@
 ---
 layout: post-index
-title: All Posts
-excerpt: "A List of Posts"
+title: Articles
+excerpt: "A List of Articles"
+image:
+  feature: header_image-3.jpg
 ---
