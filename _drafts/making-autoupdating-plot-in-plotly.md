@@ -298,7 +298,7 @@ This will open a text file using the [Vi](http://en.wikipedia.org/wiki/Vi) text 
 */62 * * * * /Users/raulvalenzuela/Documents/python/plot_plotly.py KDEN
 {% endhighlight %}
 
-Two important things you need before the schedule can run is:
+Two important things you need before the schedule can run:
 
 * add this in the first line of your script: #! /usr/bin/env python
 * make the python script executable by using: chmod u+x
