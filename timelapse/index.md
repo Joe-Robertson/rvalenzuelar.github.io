@@ -12,8 +12,6 @@ videos: true
 
 [Time-lapse photography](http://en.wikipedia.org/wiki/Time-lapse_photography) consists in taking a single picture at some time interval (for example 10 minutes) to then combine single frames into a video. Since the motion of clouds are relatively slow compared with our human experience, a cloud time-lapse give us a better sence of their birth, life, and death in just a moment.
 
-I'll try to make longer videos in a near future.
-
 Enjoy.
 
 ###Time-lapse 1
