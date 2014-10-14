@@ -9,8 +9,8 @@
 # - title: Cloud Gallery
 #   url: /cloudgallery/
 
-# - title: Timelapse
-#   url: /timelapse/
+- title: Cloud Time-lapse
+  url: /timelapse/ 
 
 # - title: Theme Setup
 #   url: /theme-setup/
