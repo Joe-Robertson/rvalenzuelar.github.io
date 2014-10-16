@@ -23,7 +23,9 @@ I've presented partial results in the following American Meteorological Society 
 * [16th Conference on Mountain Meteorology](https://ams.confex.com/ams/16MountMet/webprogram/Paper251866.html)
 * [36th Conference on Radar Meteorology](https://ams.confex.com/ams/36Radar/webprogram/Paper228797.html)
 
-I also participated in the last _3er Congreso de Oceanografía Física, Meteorología y Clima del Pacífico Sur Oriental_ (2013), held in Santiago, Chile.
+I also participated in the last _3er Congreso de Oceanografía Física, Meteorología y Clima del Pacífico Sur Oriental_ (2013), held in Santiago, Chile, with the talk:
+
+_Forzamiento de la precipitacion orografica costera debido al bloqueo orografico: analisis de un caso de estudio en el norte de California observado con radar Doppler durante PACJET_
 
 
 ###Research interests 
