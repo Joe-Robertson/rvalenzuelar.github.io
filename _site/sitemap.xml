@@ -1,33 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://mntmetblog.com/making-3D-terrain-schematic/</loc>
-    <lastmod>2014-11-06T21:53:18-07:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://mntmetblog.com/example-doppler-radar/</loc>
-    <lastmod>2014-11-05T22:09:41-07:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://mntmetblog.com/atmospheric-thermodynamics/</loc>
-    <lastmod>2014-11-03T23:30:24-07:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://mntmetblog.com/atmospheric-sciences-books/</loc>
-    <lastmod>2014-11-03T23:28:26-07:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://mntmetblog.com/16th-conference-mountain-meteorology/</loc>
     <lastmod>2014-11-02T00:00:00-06:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://mntmetblog.com/mountain-meteorology-books/</loc>
-    <lastmod>2014-10-21T22:35:56-06:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -47,88 +22,88 @@
   </url>
   <url>
     <loc>http://mntmetblog.com/</loc>
-    <lastmod>2014-11-06T21:53:19-07:00</lastmod>
+    <lastmod>2014-11-07T00:16:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/timelapse/</loc>
-    <lastmod>2014-11-06T21:53:19-07:00</lastmod>
+    <lastmod>2014-11-07T00:16:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/posts/</loc>
-    <lastmod>2014-11-06T21:53:19-07:00</lastmod>
+    <lastmod>2014-11-07T00:16:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/about/</loc>
-    <lastmod>2014-11-06T21:53:19-07:00</lastmod>
+    <lastmod>2014-11-07T00:16:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/cloudgallery/</loc>
-    <lastmod>2014-11-06T21:53:19-07:00</lastmod>
+    <lastmod>2014-11-07T00:16:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/theme-setup/</loc>
-    <lastmod>2014-11-06T21:53:19-07:00</lastmod>
+    <lastmod>2014-11-07T00:16:15-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/timelapse/index.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/404.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/posts/index.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/hello-world/index.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/theme-setup/index.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/index.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/about/index.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/interactive-plots-plotly/index.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/making-autoupdating-plot-in-plotly/index.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>http://mntmetblog.com/serve/cloudgallery/index.html</loc>
-    <lastmod>2014-10-23T19:33:34-06:00</lastmod>
+    <lastmod>2014-11-06T23:34:08-07:00</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
