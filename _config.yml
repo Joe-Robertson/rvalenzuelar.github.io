@@ -1,0 +1,75 @@
+# Site wide configuration
+
+title:            MNTMET
+locale:           en_US
+#url:              http://rvalenzuelar.github.io
+#url:              http://localhost:4000
+url:              http://mntmetblog.com
+
+# Jekyll configuration
+
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems: [jekyll-sitemap, jekyll/scholar]
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+# Jekyll-scholar for citation
+scholar:
+  style: apa
+  locale: en
+  sort_by: none
+  order: ascending
+  source: ./_references
+  bibliography: references.bib
+  bibliography_template: "{{reference}}"
+  replace_strings: true
+  join_strings:    true
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+  query: "@*"
+
+# Site owner
+owner:
+  name: Raul Valenzuela
+  avatar: bio-photo.jpg
+  bio: |
+    I'm a Natural Resources Engineer from Chile and currently PhD student 
+    in Atmospheric and Oceanic Sciences at University of Colorado Boulder, 
+    in the United States.
+  email: raul.valenzuela@colorado.edu
+  disqus:
+    shortname: mntmet
+  twitter: mntmet 
+  facebook: #username
+  google:
+    plus: #username
+    analytics: "UA-55666140-1"
+    verify: "zy4EluBimjfYbjRFQs99hAMBt8x6-gNqEzWoonoek9I"
+    ad-client: 
+    ad-slot: 
+  bing:
+    verify: "DB4C845FB51288CD99FD56A069A897D3" 
+  github: #username
+  stackoverflow: #http://stackoverflow.com/users/123456/username
+  linkedin: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
