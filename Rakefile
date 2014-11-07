@@ -38,7 +38,7 @@ task :deploy do
     status = system("git checkout #{production_branch}")
     puts status ? "Success" : "Failed"
     puts "\n## Pulling most recent #{production_branch} branch from remote"
-    status = system("git pull <remote> #{production_branch}")
+    status = system("git pull origin #{production_branch}")
     puts status ? "Success" : "Failed"
     puts "\n## Removing #{production_branch} branch contents"
     status = system("rm -rf *")
