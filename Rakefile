@@ -47,5 +47,5 @@ task :deploy do
 end
 
 desc "Commit and deploy _site/"
-task :default => [:commit, :deploy] do
+task :default => [:delete, :build, :commit, :deploy] do
 end
