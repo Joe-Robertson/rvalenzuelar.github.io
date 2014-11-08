@@ -25,8 +25,4 @@ Editors: Fotini K. Chow, Stephan F.J. De Wekker, and Bradley J. Snyder
 
 Insert review here. Awesome book.
 
-
-
-
-
-
+yoyoyo
