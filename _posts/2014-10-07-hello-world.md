@@ -15,4 +15,4 @@ Please, feel free to send me feedback about any article. Since I'm not a native 
 If you find any original content in this website interesting and you'd like to use it, please send me an email. I'll be glad to know that these stuff are useful to someone. Also, I'd appreciate refering to this site as the source.
 
 
-
+~~~~~~~~~
