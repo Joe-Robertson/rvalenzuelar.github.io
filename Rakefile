@@ -1,69 +1,74 @@
 require "tmpdir"
 
-source_branch = "source"
-production_branch = "master"
+desc "Publish master site"
+task :publish do
 
-desc "Delete _site/"
-task :delete do
-  puts "\## Deleting _site/"
-  status = system("rm -r _site")
-  puts status ? "Success" : "Failed"
-end
-
-desc "Commit _site/"
-task :commit, :message do |t, arg|
   puts "\n## Building _site files"
   status = system("jekyll build")
   puts status ? "Success" : "Failed"
 
   puts "\n## Staging modified files"
-  status = system("git add -A :/")
+  status = system("git add -A")
   puts status ? "Success" : "Failed"
-  puts "\n## Committing site build at #{Time.now.utc}"
-  message = "Build site at #{Time.now.utc}"
-  status = system("git commit -m \"#{arg[:message]||"Update"}. #{message}\"")
+  
+  puts "\n## Committing new source build at #{Time.now.utc}"
+  message = "Source build at #{Time.now.utc}"
+  status = system("git commit -m \"#{message}\"")
   puts status ? "Success" : "Failed"
-  puts "\n## Pushing commits to remote #{source_branch}"
-  status = system("git push origin #{source_branch}")
-  puts status ? "Success" : "Failed"
-end
 
-desc "Deploy _site/ to #{production_branch} branch"
-task :deploy do
+  puts "\n## Pushing commits to remote source"
+  status = system("git push")
+  puts status ? "Success" : "Failed"
+
+  puts "\n## Switching to master"
+  status = system("git checkout master")
+  puts status ? "Success" : "Failed"
+
+  puts "\n## Cleaning local master"  
+  status = system("git rm -rf .")
+  puts status ? "Success" : "Failed"
+
+  puts "\n## Staging changes in master"  
+  status = system("git add -A")
+  puts status ? "Success" : "Failed"
+
+  puts "\n## Commiting changes in master"
+  message = "Cleaned local master"  
+  status = system("git commit -m \"#{message}\"")
+  puts status ? "Success" : "Failed"
+
+  puts "\n## Switching to source"
+  status = system("git checkout source")
+  puts status ? "Success" : "Failed"
+
   Dir.mktmpdir do |tmp|
-    puts "\n## Moving #{source_branch} branch _site contents to tmp folder"
-    status = system("mv _site/* #{tmp}")
-    puts status ? "Success" : "Failed"
-    puts "\n## Switching to #{production_branch} branch"
-    status = system("git checkout #{production_branch}")
-    puts status ? "Success" : "Failed"
-    puts "\n## Pulling most recent #{production_branch} branch from remote"
-    status = system("git pull origin #{production_branch}")
-    puts status ? "Success" : "Failed"
-    puts "\n## Removing #{production_branch} branch contents"
-    status = system("rm -rf *")
+    puts "\n## Copying source _site contents to tmp folder"
+    status = system("cp -r _site/* #{tmp}")
     puts status ? "Success" : "Failed"
 
-    puts "\n## Moving contents in tmp folder to #{production_branch} branch"
+    puts "\n## Switching to master"
+    status = system("git checkout master")
+    puts status ? "Success" : "Failed"
+
+    puts "\n## Moving contents in tmp folder to master"
     status = system("mv #{tmp}/* .")
     puts status ? "Success" : "Failed"
   end
+
   puts "\n## Adding #{production_branch} branch changes"
   status = system("git add -A")
   puts status ? "Success" : "Failed"
+
   puts "\n## Committing production site at #{Time.now.utc}"
   message = "Build production site at #{Time.now.utc}"
   status = system("git commit -m \"#{message}\"")
   puts status ? "Success" : "Failed"
-  puts "\n## Pushing commits to remote #{production_branch}"
-  status = system("git push origin #{production_branch}")
+
+  puts "\n## Pushing commits to remote master"
+  status = system("git push origin master")
   puts status ? "Success" : "Failed"
 
-  puts "\n## Switching back to #{source_branch} branch"
-  status = system("git checkout #{source_branch}")
+  puts "\n## Switching back to source"
+  status = system("git checkout source")
   puts status ? "Success" : "Failed"
-end
-
-desc "Commit and deploy _site/"
-task :default => [:commit, :deploy] do
 end
