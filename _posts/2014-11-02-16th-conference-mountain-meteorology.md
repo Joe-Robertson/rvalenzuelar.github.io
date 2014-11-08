@@ -13,6 +13,4 @@ Essentially, we argue that one of the forcing mechanisms of orographic precipita
 
 More details about TTAs and the abovementioned study will be available (hopefully) soon in an article we submitted to Monthly Weather Review.
 
-Here is the [recorded presentation](https://ams.confex.com/ams/16MountMet/videogateway.cgi/id/28258?recordingid=28258)
-
-Let me know if you have any comment.
+Here is the [recorded presentation](https://ams.confex.com/ams/16MountMet/videogateway.cgi/id/28258?recordingid=28258).
