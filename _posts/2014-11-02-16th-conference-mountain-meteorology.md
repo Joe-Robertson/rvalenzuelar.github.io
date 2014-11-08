@@ -15,3 +15,4 @@ More details about TTAs and the abovementioned study will be available (hopefull
 
 Here is the [recorded presentation](https://ams.confex.com/ams/16MountMet/videogateway.cgi/id/28258?recordingid=28258)
 
+Let me know if you have any comment.
