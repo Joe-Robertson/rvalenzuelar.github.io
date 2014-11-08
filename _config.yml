@@ -14,8 +14,8 @@ highlighter: pygments
 sass:
   sass_dir: _sass
   style: compressed
-gems:
-  - jekyll-sitemap
+gems: [jekyll-sitemap, jekyll/scholar]
+
 
 kramdown:
   auto_ids: true
@@ -23,6 +23,22 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   use_coderay: false
+
+# Jekyll-scholar for citation
+scholar:
+  style: apa
+  locale: en
+  sort_by: none
+  order: ascending
+  source: ./_references
+  bibliography: references.bib
+  bibliography_template: "{{reference}}"
+  replace_strings: true
+  join_strings:    true
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+  query: "@*"
 
 # Site owner
 owner:

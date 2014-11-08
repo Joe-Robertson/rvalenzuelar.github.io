@@ -1,6 +1,6 @@
 ---
 layout: page
-title: A short (career) Bio
+title: A short career Bio
 tags: [about, author, bio]
 modified: 2014-08-08T20:53:07.573882-04:00
 comments: false
@@ -30,11 +30,11 @@ _Forzamiento de la precipitacion orografica costera debido al bloqueo orografico
 
 ###Research interests 
 
-I can say that the motivation for my research started with my undergrad thesis. In this work I applied a zonification method to allocate Olive crops in certain basin in Chile. One of the criteria for allocation was the differences in climatoligcal characteristics within the basin; for exmaple, the microclimates. I realized that there were statistically significant climatic differences along the basin; however, I did not have enough knowledge about physics to explain or even understand the origin of those spatial differences.
+My motivation for research started with my undergrad thesis. In this work I applied a zonification method to allocate Olive crops in mountainous region in Chile. One of the criteria for allocation was the differences in climatoligcal characteristics within the basin; for example, its microclimates. I realized there were statistically significant differences among the basin's microclimates; however, I did not have enough knowledge about physics to explain or even understand the origin of those spatial differences. As a result, I decided to engage in more profound studies about the atmosphere that would allow me understand the physics behind this observation.
 
-Thus, nowadays I'm using advanced tools such as scanning radars that allow me to observe and understand a bit more about how mountains can induce spatial differences in the atmosphere. For instance, how mountains can induce changes in the wind field through low-level blocking or gap flows. In addition, now I have a better knowledge about how this changes in the wind field can affect the spatial distribution of precipitation.
+Thesedays I'm using scanning radars to understand a bit more about how complex terrain can induce spatial differences in the atmosphere, and thus create microclimates. For instance, it has been observe for several years that mountains can induce changes in the wind field through low-level blocking and gap flows. In this way, not only mountains can create spatial differences due to slopes with dissimilar insolation, but the wind field induced by them can affect the spatial distribution of temperature and precipitation.
 
-So, thesedays my research interests can be grouped as: 
+In summary, my research interests can be grouped as: 
 
 * Orographic precipitation
 * Mountain meteorology 
