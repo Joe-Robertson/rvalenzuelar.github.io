@@ -55,11 +55,11 @@ task :publish do
     puts status ? "Success" : "Failed"
   end
 
-  puts "\n## Adding #{production_branch} branch changes"
+  puts "\n## Adding master branch changes"
   status = system("git add -A")
   puts status ? "Success" : "Failed"
 
-  puts "\n## Committing production site at #{Time.now.utc}"
+  puts "\n## Committing master site at #{Time.now.utc}"
   message = "Build production site at #{Time.now.utc}"
   status = system("git commit -m \"#{message}\"")
   puts status ? "Success" : "Failed"
