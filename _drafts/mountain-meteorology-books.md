@@ -23,7 +23,7 @@ In my opinion, Whiteman's book is good for an entry level audience, perhaps seni
 
 Editors: Fotini K. Chow, Stephan F.J. De Wekker, and Bradley J. Snyder
 
-Insert review here
+Insert review here. Awesome book.
 
 
 
