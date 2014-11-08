@@ -9,7 +9,6 @@ comments: true
 
 I was one of those kids attracted to books containing more draws and figures than words. Not surprisingly, the scientific world is full of papers with figures so I keep attracted to a neat figures in any paper.
 
-ssss
 
 In my research about mountain precipitation, I found this figure:
 
