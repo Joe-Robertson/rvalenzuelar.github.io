@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">MNTMET</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000" />
+<updated>2014-10-23T19:33:33-06:00</updated>
+<id>http://localhost:4000/</id>
+<author>
+  <name>Raul Valenzuela</name>
+  <uri>http://localhost:4000/</uri>
+  <email>raul.valenzuela@colorado.edu</email>
+</author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Making an auto-updating plot with python and plotly]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/making-autoupdating-plot-in-plotly/" />
+  <id>http://localhost:4000/making-autoupdating-plot-in-plotly</id>
+  <published>2014-10-12T00:00:00-06:00</published>
+  <updated>2014-10-12T00:00:00-06:00</updated>
+  <author>
+    <name>Raul Valenzuela</name>
+    <uri>http://localhost:4000</uri>
+    <email>raul.valenzuela@colorado.edu</email>
+  </author>
+  <content type="html">&lt;p&gt;There are those days when you find tabulated information on the web that is relevant for your homework/assignment/research. Of course, if the owner of this information only cares about its dissemination, you will probably see that there is no figure representing these data visually.&lt;/p&gt;
+
+&lt;p&gt;In my case, I needed to visualize meteorological data for the Denver International Airport (&lt;a href=&quot;http://w1.weather.gov/obhistory/KDEN.html&quot;&gt;KDEN&lt;/a&gt;) uploaded every hour by the National Weather Service. Of cousre, the data are tabulated and there is no figure representing the information. So here is where Plotly comes to play.&lt;/p&gt;
+
+&lt;p&gt;One advantage of Plotly is its well documented &lt;a href=&quot;http://en.wikipedia.org/wiki/Application_programming_interface&quot;&gt;API&lt;/a&gt;. If you visit the &lt;a href=&quot;https://plot.ly/api/&quot;&gt;Plotly API library&lt;/a&gt; you will find APIs for Python, Matlab, R, Node.js, Julia, and …wait for it…Excel. This means that with any of these programming languages (excluding Excel of course) you can replace your native plotting functions for the Plotly API and upload your plot online.&lt;/p&gt;
+
+&lt;h1 id=&quot;first-step&quot;&gt;First step&lt;/h1&gt;
+
+&lt;p&gt;I’m very familiar with Matlab and its plotting functions; however, I wanted to try a different approach for what I had in mind. So my first step was start learning Python…or at least the basics. This step should not be difficult to you if you are familiar with &lt;a href=&quot;http://en.wikipedia.org/wiki/High-level_programming_language&quot;&gt;high-level programming languages&lt;/a&gt; like Matlab and if you have a basic notion about the &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-oriented_programming&quot;&gt;Object Oriented Programming&lt;/a&gt; (OOP) paradigm. If the last condition does not apply to you, I would recommend reading about OOP before start learning Python.&lt;/p&gt;
+
+&lt;h1 id=&quot;second-step&quot;&gt;Second step&lt;/h1&gt;
+
+&lt;p&gt;Learning Python was not a “just-for-fun” step, it had a purpose. After some &lt;a href=&quot;http://en.wikipedia.org/wiki/Google_%28verb%29&quot;&gt;googling&lt;/a&gt; (yes, it seems to be “officially” a verb), I realized that there is something in this world called &lt;a href=&quot;http://en.wikipedia.org/wiki/Web_scraping&quot;&gt;web scraping&lt;/a&gt;. In short, this means that you use your favorite programming language to search and extract data from websites automatically.&lt;/p&gt;
+
+&lt;p&gt;So, there was my new vocabulary word when I met &lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/&quot;&gt;Beautiful Soup&lt;/a&gt; (BS). As you can guess, BS helps to web-scrap the web using Python. It took me a while to get used to the BS syntax, but I made extensive use of this tutorial made by &lt;a href=&quot;https://www.youtube.com/watch?v=G7RS5BBWxgo&quot;&gt;Susane mcg&lt;/a&gt; to get the basics that I needed.&lt;/p&gt;
+
+&lt;h1 id=&quot;third-step&quot;&gt;Third step&lt;/h1&gt;
+
+&lt;p&gt;As &lt;a href=&quot;https://www.youtube.com/watch?v=G7RS5BBWxgo&quot;&gt;Susane mcg&lt;/a&gt; explain, you can us BS to download a table, save it as a variable, and then search for the specific html tag that contains the data. Therefore, as the Art of War of Sun Tzu says…“know your enemy” (actually I have no idea if it says that). For this, I explored the html structure of the table looking for the table tag that was most useful for extracting the data. This is important because a table might have embedded tables, so you need to look for the one you need.&lt;/p&gt;
+
+&lt;h1 id=&quot;fourth-step&quot;&gt;Fourth step&lt;/h1&gt;
+&lt;p&gt;Get familiar with Plotly. You need to install the &lt;a href=&quot;https://plot.ly/python/getting-started/&quot;&gt;API for python&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;fifth-step&quot;&gt;Fifth step&lt;/h1&gt;
+&lt;p&gt;Get your hands dirty. We will create a python script called plot_plotly.py. &lt;/p&gt;
+
+&lt;p&gt;First, we import the libraries that we will be using:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;import urllib 			# html handling
+import datetime			# date handling
+import plotly.plotly as py 	# online plotting
+from plotly.graph_objs import * # online plotting
+from bs4 import BeautifulSoup	# html parsing
+import sys 			# command-line argument handling&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A python script can accept arguments from the command-line using sys. Thus, we can use the name of the station (KDEN) as input argument or choose a different station if needed (e.g. KORD):&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;station=sys.argv[1]
+if station!='KDEN':
+	print 'WRONG STATION NAME!!'
+	exit()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, we use station for parsing and retrieve the url that hosts the table:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;urlStr=&amp;quot;http://w1.weather.gov/obhistory/&amp;quot;+station+&amp;quot;.html&amp;quot;
+f=urllib.urlopen(urlStr)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;…and save this to a local variable to be processes by BS:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;s=f.read()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now it is the turn of BS to work. First, we process the raw html with BS (like when you digest your soup, but the other way around…eww):&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;soup=BeautifulSoup(s)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We look for a specific table that has a cell spacing value of 3:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;table=soup.find(&amp;quot;table&amp;quot;,cellspacing=&amp;quot;3&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;From this table, we look for all its rows:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;dataRows=table.find_all(&amp;quot;tr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Since the data contained in the table are basically time series of temperature, pressure, etc, we will create vectors containing this information. First, we initialize the variables:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;day=[]	# day
+hor=[] 	# hour
+mnt=[] 	# minute
+tmp=[] 	# air temperature
+dwp=[] 	# dew point temperature
+tmx=[] 	# max temperature 6-h
+tmn=[] 	# min temperature 6-h
+prs=[] 	# pressure&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Although some people say that this is not necessary in Python, you’ll get an initialization error when using these variables in the following loop. This loop populates the vectors with the information extracted from the table:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;arrayLen=0
+for rowNum, row in enumerate(dataRows):
+	rowCells=row.find_all(&amp;quot;td&amp;quot;)
+	if rowCells:
+		for cellNum, cell in enumerate(rowCells):
+			cellContents=cell.get_text(strip=True) 
+			if cellNum==0:
+				day.append(int(cellContents))
+			if cellNum==1:
+				hor.append(int(cellContents[:2]))
+				mnt.append(int(cellContents[3:]))
+			if cellNum==6:
+				try:
+					tmp.append(float(cellContents))
+				except ValueError:
+					tmp.append(float('NaN'))
+			if cellNum==7:
+				try:
+					dwp.append(float(cellContents))
+				except ValueError:	
+					dwp.append(float('NaN'))
+			if cellNum==8:
+				try:
+					tmx.append(float(cellContents))
+				except ValueError:
+					tmx.append(float('NaN'))
+			if cellNum==9:
+				try:
+					tmn.append(float(cellContents))
+				except ValueError:
+					tmn.append(float('NaN'))
+			if cellNum==14:
+				try:
+					prs.append(float(cellContents))
+				except ValueError:
+					prs.append(float('NaN'))
+		arrayLen=arrayLen+1&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We reverse the vectors, so the oldest data resides in the first vector index and the newer in the last:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;day.reverse()
+hor.reverse()
+mnt.reverse()
+prs.reverse()
+tmp.reverse()
+dwp.reverse()
+tmx.reverse()
+tmn.reverse()&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We can determine the month and year from the system time:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;dayNow=datetime.datetime.today().day
+monNow=datetime.datetime.today().month
+yerNow=datetime.datetime.today().year
+mon=[]
+yer=[]
+for thisDay in day:
+	if thisDay&amp;gt;dayNow &amp;amp; monNow==1:
+		mon.append(12)
+		yer.append(yerNow-1)
+	elif thisDay&amp;gt;dayNow:
+		mon.append(monNow-1)
+		yer.append(yerNow)
+	else:
+		mon.append(monNow)
+		yer.append(yerNow)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Next, create a time vector:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;mydate=[datetime.datetime(year=yer[i],month=mon[i],
+			day=day[i],hour=hor[i],minute=mnt[i]) 	
+			for i in range(0,arrayLen)]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Note the embedded loop in the variable above. From what I’ve learned, that’s common practice in Python.&lt;/p&gt;
+
+&lt;p&gt;Now that we have the data in vector form, we can make use of Plotly. You need to create an account in Plotly (which is for free) to be able to upload your plot. You will then receive information for logging in from the python script:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;py.sign_in(&amp;quot;username&amp;quot;, &amp;quot;xxxxxxxx&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are different options in Plotly to create a time series plot, called trace. Here, I use a single X axis for all the traces and a second Y axis for pressure:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;trace1=Scatter(
+	name='pressure',
+	x=mydate, 
+	y=prs,
+	mode='lines',
+	yaxis='y2'
+	)
+
+trace2=Scatter(
+	name='temperature',
+	x=mydate,
+	y=tmp,
+	mode='lines'
+	)
+
+trace3=Scatter(
+	name='dew point',	
+	x=mydate,
+	y=dwp,
+	mode='lines'
+	)
+
+trace4=Scatter(
+	name='tmax 6-h',	
+	x=mydate,
+	y=tmx,
+	mode='markers'
+	)
+
+trace5=Scatter(
+	name='tmin 6-h',	
+	x=mydate,
+	y=tmn,
+	mode='markers'
+	)
+
+data=Data([trace1,trace2,trace3,trace4,trace5])&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, you can use the following code for the updating time and date of the last plot:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;titleStr='&amp;lt;b&amp;gt;National Weather Service - Denver International Airport (KDEN)&amp;lt;/b&amp;gt;'
+nowStr=datetime.datetime.now().strftime(&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;)
+updateStr='&amp;lt;br&amp;gt;&amp;lt;i&amp;gt;Last Update: '+ nowStr +' (MDT)&amp;lt;/i&amp;gt;'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Next, we create a layout:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;layout=Layout(
+	title=titleStr+updateStr,
+	xaxis=XAxis(title='Time (MDT)'),
+	yaxis=YAxis(domain=[0,0.45],
+				title='Temperature(F)'),
+	yaxis2=YAxis(domain=[0.55,1],
+				title='Pressure(hPa)')
+	)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;..then make a figure object:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;fig=Figure(data=data,layout=layout)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;…and finally send the figure to Plotly:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;python&quot;&gt;plot_url=py.plot(fig,
+	filename='plot-plotly-example-'+station,
+	auto_open=False,
+	fileopt='overwrite')&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So, if everything is good, you should obtain a plot like this:&lt;/p&gt;
+
+&lt;div class=&quot;image-wrap&quot;&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;420&quot; frameborder=&quot;0&quot; seamless=&quot;seamless&quot; scrolling=&quot;no&quot; src=&quot;https://plot.ly/~rvalenzuela/19/560/420&quot;&gt;&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&quot;last-step&quot;&gt;Last step&lt;/h1&gt;
+
+&lt;p&gt;Although the python script is ready to run, we need a way to run it automatically every hour. I learned that there is a Unix utility called &lt;a href=&quot;http://www.adminschoice.com/crontab-quick-reference&quot;&gt;Crontab&lt;/a&gt; which I found I had in my system by using:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ man crontab&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, to edit the crontab schedule you type in your terminal:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ crontab -e&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This will open a text file using the &lt;a href=&quot;http://en.wikipedia.org/wiki/Vi&quot;&gt;Vi&lt;/a&gt; text editor. Scheduling the python script to run every 62 minutes for KDEN station would be:&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class=&quot;text&quot;&gt;*/62 * * * * /Users/raulvalenzuela/Documents/python/plot_plotly.py KDEN&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Two important things you need before the schedule can run:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;add this in the first line of your script: #! /usr/bin/env python&lt;/li&gt;
+  &lt;li&gt;make the python script executable by using: chmod u+x&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;final-thoughts&quot;&gt;Final thoughts&lt;/h1&gt;
+
+&lt;p&gt;Of course, there are many ways to do the same job and maybe with an even more efficient approach. However, if you are just learning Python (like me) then this will help you to play around a little bit and get the basic syntax of python.&lt;/p&gt;
+
+&lt;p&gt;You might also note that this is not exactly the same plot I showed as example in a &lt;a href=&quot;http://mntmetblog.com/interactive-plots-plotly/&quot;&gt;previous post&lt;/a&gt;. Using this code, every time you run plot_plotly.py new data (if the NWS table is updated) will replace the table you already have in Plotly. Then, you need to work a little more the code in order to keep the existing table and just add the last data from the new NWS table, so your plot will extend until the last time you run the script.&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/making-autoupdating-plot-in-plotly/&quot;&gt;Making an auto-updating plot with python and plotly&lt;/a&gt; was originally published by Raul Valenzuela at &lt;a href=&quot;http://localhost:4000&quot;&gt;MNTMET&lt;/a&gt; on October 12, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Interactive online plots with plotly]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/interactive-plots-plotly/" />
+  <id>http://localhost:4000/interactive-plots-plotly</id>
+  <published>2014-10-07T00:00:00-06:00</published>
+  <updated>2014-10-07T00:00:00-06:00</updated>
+  <author>
+    <name>Raul Valenzuela</name>
+    <uri>http://localhost:4000</uri>
+    <email>raul.valenzuela@colorado.edu</email>
+  </author>
+  <content type="html">&lt;p&gt;Thesedays there a number of online tools oriented to make plots and share them with social medias. I found &lt;a href=&quot;https://plot.ly/feed/#sob&quot;&gt;Plotly&lt;/a&gt; not long ago and here is an example. I made this plot using the Python API along with &lt;a href=&quot;http://en.wikipedia.org/wiki/Web_scraping&quot;&gt;web scraping&lt;/a&gt; using &lt;a href=&quot;http://www.crummy.com/software/BeautifulSoup/&quot;&gt;Beautiful Soup&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;image-wrap&quot;&gt;
+
+&lt;iframe width=&quot;650&quot; height=&quot;550&quot; frameborder=&quot;0&quot; seamless=&quot;seamless&quot; scrolling=&quot;no&quot; src=&quot;https://plot.ly/~rvalenzuela/18/650/550&quot;&gt;&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;image-wrap&quot;&gt;
+
+&lt;iframe width=&quot;650&quot; height=&quot;550&quot; frameborder=&quot;0&quot; seamless=&quot;seamless&quot; scrolling=&quot;no&quot; src=&quot;https://plot.ly/~rvalenzuela/16/650/550&quot;&gt;&lt;/iframe&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;I’ll explain in a future tutorial how I made them using Python.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/interactive-plots-plotly/&quot;&gt;Interactive online plots with plotly&lt;/a&gt; was originally published by Raul Valenzuela at &lt;a href=&quot;http://localhost:4000&quot;&gt;MNTMET&lt;/a&gt; on October 07, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Hello World!]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/hello-world/" />
+  <id>http://localhost:4000/hello-world</id>
+  <published>2014-10-07T00:00:00-06:00</published>
+  <updated>2014-10-07T00:00:00-06:00</updated>
+  <author>
+    <name>Raul Valenzuela</name>
+    <uri>http://localhost:4000</uri>
+    <email>raul.valenzuela@colorado.edu</email>
+  </author>
+  <content type="html">&lt;p&gt;Usually when you learn a new programming language, the first example is a “hello_world” program. Therefore, since I’m learning about &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; (which is supporting this website) and given that this is my first post, I decided to use this cliche title.&lt;/p&gt;
+
+&lt;p&gt;I’ll be posting about topics in mountain meteorology (especially orographic precipitation), atmospheric sciences, progress in my research, some Matlab tips that I’ve learned during my PhD, and pictures of clouds that I’ve taken. Also, I’ll talk about Matlab, and their differences and similarities.&lt;/p&gt;
+
+&lt;p&gt;Please, feel free to send me feedback about any article. Since I’m not a native english speaker, comments about typos/wording/grammar are especially welcome.&lt;/p&gt;
+
+&lt;p&gt;If you find any original content in this website interesting and you’d like to use it, please send me an email. I’ll be glad to know that these stuff are useful to someone. Also, I’d appreciate refering to this site as the source.&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/hello-world/&quot;&gt;Hello World!&lt;/a&gt; was originally published by Raul Valenzuela at &lt;a href=&quot;http://localhost:4000&quot;&gt;MNTMET&lt;/a&gt; on October 07, 2014.&lt;/p&gt;</content>
+</entry>
+
+</feed>
