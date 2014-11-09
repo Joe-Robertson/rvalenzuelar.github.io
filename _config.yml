@@ -26,7 +26,7 @@ kramdown:
 
 # Jekyll-scholar for citation
 scholar:
-  style: apa
+  style: american-meteorological-society
   locale: en
   sort_by: none
   order: ascending
