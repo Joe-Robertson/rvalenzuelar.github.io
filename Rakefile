@@ -60,7 +60,7 @@ task :publish do
   puts status ? "Success" : "Failed"
 
   puts "\n## Committing master site at #{Time.now.utc}"
-  message = "Build production site at #{Time.now.utc}"
+  message = "Build master site at #{Time.now.utc}"
   status = system("git commit -m \"#{message}\"")
   puts status ? "Success" : "Failed"
 
