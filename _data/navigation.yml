@@ -6,8 +6,8 @@
 - title: Articles
   url: /posts/
 
-# - title: Cloud Gallery
-#   url: /cloudgallery/
+- title: Cloud Gallery
+  url: /cloudgallery/
 
 - title: Cloud Time-lapse
   url: /timelapse/ 
