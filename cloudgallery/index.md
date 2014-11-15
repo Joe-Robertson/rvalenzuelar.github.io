@@ -4,11 +4,16 @@ title: Cloud Gallery
 excerpt: "Image gallery of clouds"
 image:
   feature: header_image-4.jpg
-tags: [google, sketchup, google sketchup, scheme, airflow, mountain]
+tags: [clouds, mountains]
 share: true
 comments: false
 ---
 
 
 
-Comming soon
+<figure class="third">
+	<img src="/cloudspic/cloudgal-1.jpg">
+	<img src="/cloudspic/cloudgal-2.jpg">
+	<img src="/cloudspic/cloudgal-3.jpg">
+	<figcaption>Caption describing these three images.</figcaption>
+</figure>
