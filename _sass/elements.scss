@@ -45,6 +45,18 @@ svg:not(:root) {
 		}
 	}
 }
+.third2 {
+  @include container;
+  @include clearfix;
+  @media #{$micro} {
+    img {
+      @include grid(24,4);
+    }
+    figcaption {
+      @include grid(12,12);
+    }
+  }
+}
 /* Buttons ============================================== */
 .btn {
   display: inline-block;
